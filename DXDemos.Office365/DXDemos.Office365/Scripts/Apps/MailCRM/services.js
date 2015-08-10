@@ -13,20 +13,23 @@
         stateSvc.idToken = null;
         stateSvc.activeNavIndex = 0;
 
-        //initialize for SignalR
+        //initialize called when add-in loads to setup web sockets
         stateSvc.initialize = function () {
-            //setup signalR stuff
+            //get a handle to the oAuthHub on the server
             hub = $.connection.oAuthHub;
 
-            // Create a function that the hub can call to broadcast oauth completion messages
+            //create a function that the hub can call to broadcast oauth completion messages
             hub.client.oAuthComplete = function (user) {
+                //the server just sent the add-in a token
                 stateSvc.idToken.user = user;
-                $rootScope.$broadcast("oAuthComplete");
+                $rootScope.$broadcast("oAuthComplete", "/lookup");
             };
 
-            // Start the connection.
+            //start listening on the hub for tokens
             $.connection.hub.start().done(function () {
                 hub.server.initialize();
+
+                //get the client identifier the popup will use to talk back
                 stateSvc.clientId = $.connection.hub.id;
             });
         };
