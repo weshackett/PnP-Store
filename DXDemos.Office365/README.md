@@ -18,6 +18,8 @@ After you clone the Store PnP repo, you should open the web.config and update th
     <add key="ddb:authKey" value="WkPRneEPSrhCdaEVd30e+ag00pbe8B0Ilzn4idJqakWMtFgz7oFBXlrjZvNTqPKzHG25ZHAwZxJrtydo1gBiAw==" />
     <add key="ddb:database" value="dxdemo" />
 
+When you setup this app in Azure AD, it needs the following permissions: **Access directory as signed-in user** and **Read and Write the signed-in users files**. It also needs **Read and write user mail** from Office 365 Exchange Online** (this is for user pictures, which is currently broken in the Unified API).
+
 # Apps/Add-ins in DXDemos.Office365 #
 This section will outline all the apps and add-ins contained in the DXDemos.Office365 solution.
 ## DXDemos.Office365.MailCRM ##
