@@ -1,5 +1,5 @@
 # Office365 Developer Patterns & Practices - Store Edition
-Office365 Developer Patterns &amp; Practices repository focused exclusively on solutions built for the Office Marketplace. 
+Office365 Developer Patterns &amp; Practices repository focused exclusively on solutions built for the Office Marketplace. The focus in this PnP repo is store-ready (ot near store ready) solutions that leverage a number of granular patterns.
 
 There are a notable number of restrictions for what can be deloyed through the Office Store. The intent of this repository is to give GREAT reference implementations on the state of the possible when building applications that you plan to deploy through the marketplace. 
 
